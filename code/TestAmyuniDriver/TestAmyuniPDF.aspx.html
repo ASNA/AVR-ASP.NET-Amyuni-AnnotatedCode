@@ -32,7 +32,7 @@
         <a class='octothorpe' href='#section-1'>#</a>
       </div>
       <p>This class shows a way to use the ASNA.AmyuniPDF library from an AVR ASP.NET
-code-behind. </p>
+code-behind.</p>
 <hr />
     </div>
     <div class='code'>
@@ -46,8 +46,8 @@ code-behind. </p>
         <a class='octothorpe' href='#section-2'>#</a>
       </div>
       <h2>Global (to the class) declarations</h2>
-<p>These two variables contain the configuration folder path and the 
-output folder path. </p>
+<p>These two variables contain the configuration folder path and the
+output folder path.</p>
     </div>
     <div class='code'>
       <div class="highlight"><pre>    <span class="kr">DclFld</span> <span class="nx">ConfigFolder</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
@@ -74,7 +74,7 @@ output folder path. </p>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-4'>#</a>
       </div>
-      <p>Get absolute paths to the two folder locations. </p>
+      <p>Get absolute paths to the two folder locations.</p>
     </div>
     <div class='code'>
       <div class="highlight"><pre>        <span class="nx">ConfigFolder</span> <span class="o">=</span> <span class="nx">Server</span><span class="p">.</span><span class="nx">MapPath</span><span class="p">(</span><span class="s1">&#39;Configuration&#39;</span><span class="p">)</span>
@@ -102,7 +102,7 @@ output folder path. </p>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-6'>#</a>
       </div>
-      <p>Instance the PrintTest class. </p>
+      <p>Instance the PrintTest class.</p>
     </div>
     <div class='code'>
       <div class="highlight"><pre>        <span class="kr">DclFld</span> <span class="nx">pt</span>          <span class="kr">Type</span><span class="p">(</span><span class="nx">PrintTest</span><span class="p">)</span> <span class="nx">New</span><span class="p">(</span><span class="nx">ConfigFolder</span><span class="p">,</span> <span class="nx">OutputFolder</span><span class="p">)</span>
@@ -115,9 +115,9 @@ output folder path. </p>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-7'>#</a>
       </div>
-      <p>PrintReportToPDF() prints the report to PDF and returns the 
+      <p>PrintReportToPDF() prints the report to PDF and returns the
 name of the PDF file--it doesn't not include the full path, just
-the file name and extension. </p>
+the file name and extension.</p>
     </div>
     <div class='code'>
       <div class="highlight"><pre>        <span class="nx">PDFFileName</span> <span class="o">=</span> <span class="nx">pt</span><span class="p">.</span><span class="nx">PrintReportToPDF</span><span class="p">()</span></pre></div>
@@ -153,7 +153,7 @@ the file name and extension. </p>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-10'>#</a>
       </div>
-      <p>Alternative, you could immediately redirect to the PDF. </p>
+      <p>Alternative, you could immediately redirect to the PDF.</p>
     </div>
     <div class='code'>
       <div class="highlight"><pre>        <span class="c1">//- If you prefer, go directly to the PDF.</span>
@@ -169,9 +169,9 @@ the file name and extension. </p>
       </div>
       <h2>Helper function</h2>
 <p>This function returns the virtual app root with an ending slash.
-This function should have been included by .NET! And it should also 
-be parted away in a utility library. 
-This code was ported from <a href="http://bit.ly/1SSNaNR">C# code on StackOverflow</a>.    </p>
+This function should have been included by .NET! And it should also
+be parted away in a utility library.
+This code was ported from <a href="http://bit.ly/1SSNaNR">C# code on StackOverflow</a>.</p>
     </div>
     <div class='code'>
       <div class="highlight"><pre>    <span class="kr">BegFunc</span> <span class="nx">GetAppRoot</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
@@ -237,6 +237,20 @@ This code was ported from <a href="http://bit.ly/1SSNaNR">C# code on StackOverfl
     <span class="kr">EndFunc</span>
 
 <span class="kr">EndClass</span>
+
+<span class="c1">//- Copyright ©2015 by ASNA. All Rights Reserved.</span>
+<span class="c1">//- ---------------------------------------------</span>
+<span class="c1">//- Permission to use, copy, modify, and distribute this software any purpose is hereby granted,</span>
+<span class="c1">//- provided that the organize using the code is a licensee of any ASNA product.</span>
+<span class="c1">//-</span>
+<span class="c1">//- IN NO EVENT SHALL ASNA BE LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR</span>
+<span class="c1">//- CONSEQUENTIAL DAMAGES, INCLUDING LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND</span>
+<span class="c1">//- ITS DOCUMENTATION, EVEN IF ASNA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<span class="c1">//-</span>
+<span class="c1">//- ASNA SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED</span>
+<span class="c1">//- WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE SOFTWARE AND</span>
+<span class="c1">//- ACCOMPANYING DOCUMENTATION, IF ANY, PROVIDED HEREUNDER IS PROVIDED &quot;AS IS&quot;. ASNA HAS</span>
+<span class="c1">//- NO OBLIGATION TO PROVIDE MAINTENANCE, SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.</span>
 
 </pre></div>
     </div>
