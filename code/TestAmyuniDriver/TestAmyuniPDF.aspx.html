@@ -29,28 +29,7 @@
     <span class="nx">DclEnumFld</span> <span class="nx">UseFileNameSpecified</span>   <span class="nx">Value</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="nx">EndEnum</span>
 
-<span class="kr">BegClass</span> <span class="nx">TestAmyuniPDF</span> <span class="nx">Partial</span><span class="p">(</span><span class="o">*</span><span class="nx">Yes</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">Extends</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">Web</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">Page</span><span class="p">)</span>
-    <span class="kr">DclFld</span> <span class="nx">ConfigFolder</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
-    <span class="kr">DclFld</span> <span class="nx">OutputFolder</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
-
-    <span class="kr">BegSr</span> <span class="nx">Page_Load</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span> <span class="nx">Event</span><span class="p">(</span><span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">Load</span><span class="p">)</span>
-        <span class="kr">DclSrParm</span> <span class="nx">sender</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="nb">Object</span><span class="p">)</span>
-        <span class="kr">DclSrParm</span> <span class="nx">e</span> <span class="kr">Type</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">EventArgs</span><span class="p">)</span>
-
-        <span class="nx">ConfigFolder</span> <span class="o">=</span> <span class="nx">Server</span><span class="p">.</span><span class="nx">MapPath</span><span class="p">(</span><span class="s1">&#39;Configuration&#39;</span><span class="p">)</span>
-        <span class="nx">OutputFolder</span> <span class="o">=</span> <span class="nx">Server</span><span class="p">.</span><span class="nx">MapPath</span><span class="p">(</span><span class="s1">&#39;PDFs&#39;</span><span class="p">)</span>
-    <span class="kr">EndSr</span>
-
-	<span class="kr">BegSr</span> <span class="nx">buttonPrintDF_Click</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span> <span class="nx">Event</span><span class="p">(</span><span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">buttonPrintDF</span><span class="p">.</span><span class="nx">Click</span><span class="p">)</span>
-		<span class="kr">DclSrParm</span> <span class="nx">sender</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="nb">Object</span><span class="p">)</span>
-		<span class="kr">DclSrParm</span> <span class="nx">e</span> <span class="kr">Type</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">EventArgs</span><span class="p">)</span>
-
-        <span class="kr">DclFld</span> <span class="nx">pt</span>          <span class="kr">Type</span><span class="p">(</span><span class="nx">PrintTest</span><span class="p">)</span> <span class="nx">New</span><span class="p">(</span><span class="nx">ConfigFolder</span><span class="p">,</span> <span class="nx">OutputFolder</span><span class="p">)</span>
-        <span class="kr">DclFld</span> <span class="nx">PDFFileName</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
-
-        <span class="nx">PDFFileName</span> <span class="o">=</span> <span class="nx">pt</span><span class="p">.</span><span class="nx">PrintReportToPDF</span><span class="p">()</span>
-        <span class="nx">hyperlinkGetPDF</span><span class="p">.</span><span class="nx">NavigateUrl</span> <span class="o">=</span> <span class="kc">String</span><span class="p">.</span><span class="nx">Format</span><span class="p">(</span><span class="s2">&quot;{0}PDFs/{1}&quot;</span><span class="p">,</span> <span class="nx">GetAppRoot</span><span class="p">(),</span> <span class="nx">PDFFileName</span><span class="p">)</span>
-        <span class="nx">hyperlinkGetPDF</span><span class="p">.</span><span class="nx">Visible</span> <span class="o">=</span> <span class="o">*</span><span class="kc">True</span></pre></div>
+<span class="kr">BegClass</span> <span class="nx">TestAmyuniPDF</span> <span class="nx">Partial</span><span class="p">(</span><span class="o">*</span><span class="nx">Yes</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">Extends</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">Web</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">Page</span><span class="p">)</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -59,17 +38,16 @@
       <div class='octowrap'>
         <a class='octothorpe' href='#section-1'>#</a>
       </div>
-      <ul>
-<li>If you prefer, go directly to the PDF.</li>
-<li>Response.Redirect(String.Format("{0}PDFs/{1}", GetAppRoot(), PDFFileName))</li>
-</ul>
+      <p>These two variables contain the configuration folder path and the 
+output folder path. </p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>	<span class="kr">EndSr</span>
+      <div class="highlight"><pre>    <span class="kr">DclFld</span> <span class="nx">ConfigFolder</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
+    <span class="kr">DclFld</span> <span class="nx">OutputFolder</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
 
-    <span class="kr">BegFunc</span> <span class="nx">GetAppRoot</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
-        <span class="kr">DclFld</span> <span class="nx">AppPath</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
-        <span class="kr">DclFld</span> <span class="nx">Context</span> <span class="kr">Type</span><span class="p">(</span><span class="nx">HttpContext</span><span class="p">.</span><span class="nx">Current</span><span class="p">)</span></pre></div>
+    <span class="kr">BegSr</span> <span class="nx">Page_Load</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span> <span class="nx">Event</span><span class="p">(</span><span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">Load</span><span class="p">)</span>
+        <span class="kr">DclSrParm</span> <span class="nx">sender</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="nb">Object</span><span class="p">)</span>
+        <span class="kr">DclSrParm</span> <span class="nx">e</span> <span class="kr">Type</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">EventArgs</span><span class="p">)</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -78,10 +56,16 @@
       <div class='octowrap'>
         <a class='octothorpe' href='#section-2'>#</a>
       </div>
-      <p>Getting the current context of HTTP request</p>
+      <p>Get absolute paths to the two folder locations. </p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>        <span class="nx">Context</span> <span class="o">=</span> <span class="nx">HttpContext</span><span class="p">.</span><span class="nx">Current</span></pre></div>
+      <div class="highlight"><pre>        <span class="nx">ConfigFolder</span> <span class="o">=</span> <span class="nx">Server</span><span class="p">.</span><span class="nx">MapPath</span><span class="p">(</span><span class="s1">&#39;Configuration&#39;</span><span class="p">)</span>
+        <span class="nx">OutputFolder</span> <span class="o">=</span> <span class="nx">Server</span><span class="p">.</span><span class="nx">MapPath</span><span class="p">(</span><span class="s1">&#39;PDFs&#39;</span><span class="p">)</span>
+    <span class="kr">EndSr</span>
+
+	<span class="kr">BegSr</span> <span class="nx">buttonPrintDF_Click</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span> <span class="nx">Event</span><span class="p">(</span><span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">buttonPrintDF</span><span class="p">.</span><span class="nx">Click</span><span class="p">)</span>
+		<span class="kr">DclSrParm</span> <span class="nx">sender</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="nb">Object</span><span class="p">)</span>
+		<span class="kr">DclSrParm</span> <span class="nx">e</span> <span class="kr">Type</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">EventArgs</span><span class="p">)</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -90,10 +74,11 @@
       <div class='octowrap'>
         <a class='octothorpe' href='#section-3'>#</a>
       </div>
-      <p>Checking the current context content</p>
+      <p>Instance the PrintTest class. </p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>        <span class="kr">If</span> <span class="p">(</span><span class="nx">Context</span> <span class="o">&lt;&gt;</span> <span class="o">*</span><span class="nx">Nothing</span><span class="p">)</span></pre></div>
+      <div class="highlight"><pre>        <span class="kr">DclFld</span> <span class="nx">pt</span>          <span class="kr">Type</span><span class="p">(</span><span class="nx">PrintTest</span><span class="p">)</span> <span class="nx">New</span><span class="p">(</span><span class="nx">ConfigFolder</span><span class="p">,</span> <span class="nx">OutputFolder</span><span class="p">)</span>
+        <span class="kr">DclFld</span> <span class="nx">PDFFileName</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -101,6 +86,89 @@
     <div class='docs'>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>PrintReportToPDF() prints the report to PDF and returns the 
+name of the PDF file--it doesn't not include the full path, just
+the file name and extension. </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">PDFFileName</span> <span class="o">=</span> <span class="nx">pt</span><span class="p">.</span><span class="nx">PrintReportToPDF</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p>Assign the full path to the PDF file as the NavigateUrl to the hyperlink.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">hyperlinkGetPDF</span><span class="p">.</span><span class="nx">NavigateUrl</span> <span class="o">=</span> <span class="kc">String</span><span class="p">.</span><span class="nx">Format</span><span class="p">(</span><span class="s2">&quot;{0}PDFs/{1}&quot;</span><span class="p">,</span> <span class="nx">GetAppRoot</span><span class="p">(),</span> <span class="nx">PDFFileName</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>Show the hyperlink.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">hyperlinkGetPDF</span><span class="p">.</span><span class="nx">Visible</span> <span class="o">=</span> <span class="o">*</span><span class="kc">True</span>
+
+        <span class="c1">//- If you prefer, go directly to the PDF.</span>
+        <span class="c1">//- Response.Redirect(String.Format(&quot;{0}PDFs/{1}&quot;, GetAppRoot(), PDFFileName))</span>
+	<span class="kr">EndSr</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>This function returns the virtual app root with an ending slash.
+This function should have been included by .NET! And it should also 
+be parted away in a utility library. 
+This code was ported from the C# available here: http://bit.ly/1SSNaNR    </p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="kr">BegFunc</span> <span class="nx">GetAppRoot</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
+        <span class="kr">DclFld</span> <span class="nx">AppPath</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
+        <span class="kr">DclFld</span> <span class="nx">Context</span> <span class="kr">Type</span><span class="p">(</span><span class="nx">HttpContext</span><span class="p">.</span><span class="nx">Current</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>Getting the current context of HTTP request</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">Context</span> <span class="o">=</span> <span class="nx">HttpContext</span><span class="p">.</span><span class="nx">Current</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <p>Checking the current context content</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="kr">If</span> <span class="p">(</span><span class="nx">Context</span> <span class="o">&lt;&gt;</span> <span class="o">*</span><span class="nx">Nothing</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
       </div>
       <p>Formatting the fully qualified website url/name</p>
     </div>
