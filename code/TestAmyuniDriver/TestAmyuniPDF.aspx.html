@@ -178,9 +178,19 @@ This code was ported from <a href="http://bit.ly/1SSNaNR">C# code on StackOverfl
                                     <span class="nx">Context</span><span class="p">.</span><span class="nx">Request</span><span class="p">.</span><span class="nx">Url</span><span class="p">.</span><span class="nx">Host</span><span class="p">,</span> <span class="o">+</span>
                                     <span class="p">(</span><span class="nx">Context</span><span class="p">.</span><span class="nx">Request</span><span class="p">.</span><span class="nx">Url</span><span class="p">.</span><span class="nx">Port</span> <span class="o">=</span> <span class="mi">80</span><span class="p">)</span> <span class="o">?</span> <span class="kc">String</span><span class="p">.</span><span class="nx">Empty</span> <span class="o">:</span>  <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="nx">context</span><span class="p">.</span><span class="nx">Request</span><span class="p">.</span><span class="nx">Url</span><span class="p">.</span><span class="nx">Port</span><span class="p">,</span> <span class="o">+</span>
                                     <span class="nx">Context</span><span class="p">.</span><span class="nx">Request</span><span class="p">.</span><span class="nx">ApplicationPath</span><span class="p">)</span>
-        <span class="kr">EndIf</span>
-
-        <span class="kr">If</span> <span class="p">(</span><span class="k">NOT</span> <span class="nx">AppPath</span><span class="p">.</span><span class="nx">EndsWith</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">))</span>
+        <span class="kr">EndIf</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <p>Make sure it ends with slash.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="kr">If</span> <span class="p">(</span><span class="k">NOT</span> <span class="nx">AppPath</span><span class="p">.</span><span class="nx">EndsWith</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">))</span>
            <span class="nx">AppPath</span> <span class="o">+=</span> <span class="s2">&quot;/&quot;</span>
         <span class="kr">EndIf</span>
 
