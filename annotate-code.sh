@@ -4,6 +4,6 @@ pycco ../TestAmyuniDriver/app_code/*.vr -d $base/TestAmyuniDriver/app_code -l ja
 pycco ../TestAmyuniDriver/*.vr          -d $base/TestAmyuniDriver          -l javascript
 pycco ../../Other/ASNA.AmyUniPDF/ASNA.AmyUniPDF/*.vr -d $base/ASNA.AmyuniPDF -l javascript
 
-# git add -A
-# git commit -m 'Refresh annotated code'
-# git push
+git add -A
+git commit -m 'Refresh annotated code'
+git push
