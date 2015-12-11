@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>DriverInfo.vr</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>DriverInfo.vr</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kr">Using</span> <span class="nx">System</span>
+<span class="kr">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Text</span>
+<span class="kr">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Xml</span>
+<span class="kr">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">IO</span>
+
+<span class="nx">DclNamespace</span> <span class="nx">ASNA</span><span class="p">.</span><span class="nx">AmyUniPDF</span>
+
+<span class="kr">BegClass</span> <span class="nx">DriverInfo</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span>
+    <span class="nx">DclProp</span> <span class="nx">PrinterName</span>          <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span>
+    <span class="nx">DclProp</span> <span class="nx">LicenseCompany</span>       <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span>
+    <span class="nx">DclProp</span> <span class="nx">LicenseCode</span>          <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span>
+    <span class="nx">DclProp</span> <span class="nx">OutputPath</span>           <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span>
+    <span class="nx">DclProp</span> <span class="nx">OutputFileName</span>       <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span>
+
+    <span class="kr">BegFunc</span> <span class="nx">GetFullXmlFileName</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span> <span class="nx">Shared</span><span class="p">(</span><span class="o">*</span><span class="nx">Yes</span><span class="p">)</span>
+        <span class="kr">DclSrParm</span> <span class="nx">XmlFilePath</span>  <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
+
+        <span class="kr">DclFld</span>   <span class="nx">FullXmlFileName</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
+        <span class="nx">DclConst</span> <span class="nx">FileName</span> <span class="nx">Value</span><span class="p">(</span><span class="s1">&#39;AmyuniDriverInfo.xml&#39;</span><span class="p">)</span>
+
+        <span class="nx">XmlFilePath</span> <span class="o">=</span> <span class="nx">Helpers</span><span class="p">.</span><span class="nx">EnsureTrailingSlash</span><span class="p">(</span><span class="nx">XmlFilePath</span><span class="p">)</span>
+
+        <span class="nx">FullXmlFileName</span> <span class="o">=</span> <span class="nx">XmlFilePath</span> <span class="o">+</span> <span class="nx">FileName</span>
+        <span class="kr">If</span> <span class="p">(</span> <span class="k">NOT</span> <span class="nx">File</span><span class="p">.</span><span class="nx">Exists</span><span class="p">(</span><span class="nx">FullXmlFileName</span><span class="p">))</span>
+            <span class="nx">Throw</span> <span class="o">*</span><span class="nx">New</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Exception</span><span class="p">(</span><span class="s1">&#39;Amyuni XML driver info file is not available at: &#39;</span> <span class="o">+</span> <span class="nx">FullXmlFileName</span><span class="p">)</span>
+        <span class="kr">EndIf</span>
+
+        <span class="kr">LeaveSr</span> <span class="nx">FullXmlFileName</span>
+    <span class="kr">EndFunc</span>
+
+    <span class="kr">BegFunc</span> <span class="nx">GetInstance</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">Shared</span><span class="p">(</span><span class="o">*</span><span class="nx">Yes</span><span class="p">)</span> <span class="kr">Type</span><span class="p">(</span><span class="nx">DriverInfo</span><span class="p">)</span>
+        <span class="kr">DclSrParm</span> <span class="nx">XmlFilePath</span>     <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
+        <span class="kr">DclSrParm</span> <span class="nx">OutputFilePath</span>  <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
+
+        <span class="kr">DclFld</span> <span class="nx">XmlDoc</span>          <span class="kr">Type</span><span class="p">(</span><span class="nx">XmlDocument</span><span class="p">)</span> <span class="nx">New</span><span class="p">()</span>
+        <span class="kr">DclFld</span> <span class="nx">DocRoot</span>         <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
+        <span class="kr">DclFld</span> <span class="nx">Node</span>            <span class="kr">Type</span><span class="p">(</span><span class="nx">XmlNode</span><span class="p">)</span>
+        <span class="kr">DclFld</span> <span class="nx">ai</span>              <span class="kr">Type</span><span class="p">(</span><span class="nx">DriverInfo</span><span class="p">)</span> <span class="nx">N</span>
+        <span class="kr">DclFld</span> <span class="nx">FullXmlFileName</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
+
+        <span class="nx">OutputFilePath</span> <span class="o">=</span> <span class="nx">Helpers</span><span class="p">.</span><span class="nx">EnsureTrailingSlash</span><span class="p">(</span><span class="nx">OutputFilePath</span><span class="p">)</span>
+
+        <span class="nx">FullXmlFileName</span> <span class="o">=</span> <span class="nx">GetFullXmlFileName</span><span class="p">(</span><span class="nx">XmlFilePath</span><span class="p">)</span>
+        <span class="nx">XmlDoc</span><span class="p">.</span><span class="nx">Load</span><span class="p">(</span><span class="nx">FullXmlFileName</span><span class="p">)</span>
+
+        <span class="nx">DocRoot</span> <span class="o">=</span> <span class="s2">&quot;/Root&quot;</span>
+        <span class="nx">Node</span> <span class="o">=</span> <span class="nx">XmlDoc</span><span class="p">.</span><span class="nx">SelectSingleNode</span><span class="p">(</span><span class="nx">DocRoot</span> <span class="o">+</span> <span class="s1">&#39;/AmyuniPDF/PrinterName&#39;</span><span class="p">)</span>
+        <span class="nx">ai</span><span class="p">.</span><span class="nx">PrinterName</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">InnerText</span>
+
+        <span class="nx">Node</span> <span class="o">=</span> <span class="nx">XmlDoc</span><span class="p">.</span><span class="nx">SelectSingleNode</span><span class="p">(</span><span class="nx">DocRoot</span> <span class="o">+</span> <span class="s1">&#39;/AmyuniPDF/LicenseCompany&#39;</span><span class="p">)</span>
+        <span class="nx">ai</span><span class="p">.</span><span class="nx">LicenseCompany</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">InnerText</span>
+
+        <span class="nx">Node</span> <span class="o">=</span> <span class="nx">XmlDoc</span><span class="p">.</span><span class="nx">SelectSingleNode</span><span class="p">(</span><span class="nx">DocRoot</span> <span class="o">+</span> <span class="s1">&#39;/AmyuniPDF/LicenseCode&#39;</span><span class="p">)</span>
+        <span class="nx">ai</span><span class="p">.</span><span class="nx">LicenseCode</span> <span class="o">=</span> <span class="nx">Node</span><span class="p">.</span><span class="nx">InnerText</span>
+
+        <span class="nx">ai</span><span class="p">.</span><span class="nx">OutputFileName</span> <span class="o">=</span> <span class="nx">Path</span><span class="p">.</span><span class="nx">GetRandomFileName</span><span class="p">().</span><span class="nx">Replace</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+        <span class="nx">ai</span><span class="p">.</span><span class="nx">OutputPath</span> <span class="o">=</span> <span class="nx">OutputFilePath</span>
+
+        <span class="kr">LeaveSr</span> <span class="nx">ai</span>
+    <span class="kr">EndFunc</span>
+<span class="kr">EndClass</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>
