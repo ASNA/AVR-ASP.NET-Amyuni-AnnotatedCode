@@ -33,10 +33,9 @@
       </div>
       <p>This class shows a way to use the ASNA.AmyuniPDF library from an AVR ASP.NET
 code-behind.</p>
-<hr />
     </div>
     <div class='code'>
-      <div class="highlight"><pre><span class="kr">BegClass</span> <span class="nx">TestAmyuniPDF</span> <span class="nx">Partial</span><span class="p">(</span><span class="o">*</span><span class="nx">Yes</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">Extends</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">Web</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">Page</span><span class="p">)</span></pre></div>
+      <div class="highlight"><pre></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -44,6 +43,33 @@ code-behind.</p>
     <div class='docs'>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>A longtime friend of ASNA's, Forrest Forbus (that's right, <a href="https://asna.com/us/articles/newsletter/2014/q4/asna-palooza-2014">Elvis himself!</a>)
+contributed lots of code, ideas, and inspiration for this code. Beyond contributing code,
+it was his work that originally proved the Amyuni PDF print driver works with AVR for .NET.
+Thank you for all your help, Forrest.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <hr />
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kr">BegClass</span> <span class="nx">TestAmyuniPDF</span> <span class="nx">Partial</span><span class="p">(</span><span class="o">*</span><span class="nx">Yes</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">Extends</span><span class="p">(</span><span class="nx">System</span><span class="p">.</span><span class="nx">Web</span><span class="p">.</span><span class="nx">UI</span><span class="p">.</span><span class="nx">Page</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
       </div>
       <h2>Global (to the class) declarations</h2>
 <p>These two variables contain the configuration folder path and the
@@ -55,10 +81,10 @@ output folder path.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-3'>
+  <div class='section' id='section-5'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-3'>#</a>
+        <a class='octothorpe' href='#section-5'>#</a>
       </div>
       <h2>Save folder locations in the page's Load event.</h2>
     </div>
@@ -69,10 +95,10 @@ output folder path.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-4'>
+  <div class='section' id='section-6'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-4'>#</a>
+        <a class='octothorpe' href='#section-6'>#</a>
       </div>
       <p>Get absolute paths to the two folder locations.</p>
     </div>
@@ -83,10 +109,10 @@ output folder path.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-5'>
+  <div class='section' id='section-7'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-5'>#</a>
+        <a class='octothorpe' href='#section-7'>#</a>
       </div>
       <h2>Print the report on a button click.</h2>
     </div>
@@ -97,10 +123,10 @@ output folder path.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-6'>
+  <div class='section' id='section-8'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-6'>#</a>
+        <a class='octothorpe' href='#section-8'>#</a>
       </div>
       <p>Instance the PrintTest class.</p>
     </div>
@@ -110,10 +136,10 @@ output folder path.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-7'>
+  <div class='section' id='section-9'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-7'>#</a>
+        <a class='octothorpe' href='#section-9'>#</a>
       </div>
       <p>PrintReportToPDF() prints the report to PDF and returns the
 name of the PDF file--it doesn't not include the full path, just
@@ -124,10 +150,10 @@ the file name and extension.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-8'>
+  <div class='section' id='section-10'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-8'>#</a>
+        <a class='octothorpe' href='#section-10'>#</a>
       </div>
       <p>Assign the full path to the PDF file as the NavigateUrl to the hyperlink.</p>
     </div>
@@ -136,10 +162,10 @@ the file name and extension.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-9'>
+  <div class='section' id='section-11'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-9'>#</a>
+        <a class='octothorpe' href='#section-11'>#</a>
       </div>
       <p>Show the hyperlink.</p>
     </div>
@@ -148,10 +174,10 @@ the file name and extension.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-10'>
+  <div class='section' id='section-12'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-10'>#</a>
+        <a class='octothorpe' href='#section-12'>#</a>
       </div>
       <p>Alternative, you could immediately redirect to the PDF.</p>
     </div>
@@ -162,10 +188,10 @@ the file name and extension.</p>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-11'>
+  <div class='section' id='section-13'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-11'>#</a>
+        <a class='octothorpe' href='#section-13'>#</a>
       </div>
       <h2>Helper function</h2>
 <p>This function returns the virtual app root with an ending slash.
@@ -180,10 +206,10 @@ This code was ported from <a href="http://bit.ly/1SSNaNR">C# code on StackOverfl
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-12'>
+  <div class='section' id='section-14'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-12'>#</a>
+        <a class='octothorpe' href='#section-14'>#</a>
       </div>
       <p>Getting the current context of HTTP request</p>
     </div>
@@ -192,10 +218,10 @@ This code was ported from <a href="http://bit.ly/1SSNaNR">C# code on StackOverfl
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-13'>
+  <div class='section' id='section-15'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-13'>#</a>
+        <a class='octothorpe' href='#section-15'>#</a>
       </div>
       <p>Checking the current context content</p>
     </div>
@@ -204,10 +230,10 @@ This code was ported from <a href="http://bit.ly/1SSNaNR">C# code on StackOverfl
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-14'>
+  <div class='section' id='section-16'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-14'>#</a>
+        <a class='octothorpe' href='#section-16'>#</a>
       </div>
       <p>Formatting the fully qualified website url/name</p>
     </div>
@@ -221,10 +247,10 @@ This code was ported from <a href="http://bit.ly/1SSNaNR">C# code on StackOverfl
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-15'>
+  <div class='section' id='section-17'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-15'>#</a>
+        <a class='octothorpe' href='#section-17'>#</a>
       </div>
       <p>Make sure it ends with slash.</p>
     </div>

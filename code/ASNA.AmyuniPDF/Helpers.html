@@ -20,6 +20,18 @@
       
     </div>
     <div class='code'>
+      <div class="highlight"><pre><span class="nx">Helper</span> <span class="nx">functions</span><span class="p">.</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <hr />
+    </div>
+    <div class='code'>
       <div class="highlight"><pre><span class="kr">Using</span> <span class="nx">System</span>
 <span class="kr">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Text</span>
 
@@ -29,10 +41,10 @@
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-1'>
+  <div class='section' id='section-2'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-1'>#</a>
+        <a class='octothorpe' href='#section-2'>#</a>
       </div>
       <p>Ensure that a string ends with a trailing backslash.</p>
     </div>
@@ -42,22 +54,18 @@
 
         <span class="kr">DclFld</span> <span class="nx">Result</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
 
-        <span class="kr">If</span> <span class="p">(</span><span class="nx">PathName</span><span class="p">.</span><span class="nx">EndsWith</span><span class="p">(</span><span class="s1">&#39;\&#39;))</span>
-<span class="s1">            Result = PathName            </span>
-<span class="s1">        Else</span>
-<span class="s1">            Result = PathName + &#39;</span><span class="err">\&#39;</span>
-        <span class="kr">EndIf</span> 
+        <span class="nx">Result</span> <span class="o">=</span> <span class="nx">PathName</span><span class="p">.</span><span class="nx">EndsWith</span><span class="p">(</span><span class="s1">&#39;\&#39;) ? PathName : PathName + &#39;</span><span class="err">\&#39;</span>
         <span class="kr">LeaveSr</span> <span class="nx">Result</span>
     <span class="kr">EndFunc</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-2'>
+  <div class='section' id='section-3'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-2'>#</a>
+        <a class='octothorpe' href='#section-3'>#</a>
       </div>
-      <p>Convert inches to print units. </p>
+      <p>Convert inches to print units.</p>
     </div>
     <div class='code'>
       <div class="highlight"><pre>    <span class="kr">BegFunc</span> <span class="nx">ConvertInchesToPrintUnits</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">Packed</span><span class="p">)</span> <span class="kr">Len</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">Shared</span><span class="p">(</span><span class="o">*</span><span class="nx">Yes</span><span class="p">)</span>

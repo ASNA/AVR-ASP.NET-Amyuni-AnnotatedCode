@@ -20,23 +20,7 @@
       
     </div>
     <div class='code'>
-      <div class="highlight"><pre><span class="kr">Using</span> <span class="nx">System</span>
-<span class="kr">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Text</span>
-<span class="kr">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">IO</span>
-<span class="kr">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Xml</span>
-
-<span class="nx">DclNamespace</span> <span class="nx">ASNA</span><span class="p">.</span><span class="nx">AmyUniPDF</span>
-
-<span class="nx">BegEnum</span> <span class="nx">AmyuniFileOptions</span>
-    <span class="nx">DclEnumFld</span> <span class="nx">DoNotPromptForFileName</span> <span class="nx">Value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-    <span class="nx">DclEnumFld</span> <span class="nx">UseFileNameSpecified</span>   <span class="nx">Value</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="nx">EndEnum</span>
-
-<span class="kr">BegClass</span> <span class="nx">Manager</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span>
-    <span class="kr">DclFld</span> <span class="nx">DriverInfo</span> <span class="kr">Type</span><span class="p">(</span><span class="nx">PDFDriverInfo</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span>
-    <span class="kr">DclFld</span> <span class="nx">AmyuniPDF</span>  <span class="kr">Type</span><span class="p">(</span><span class="nx">CDIntfEx</span><span class="p">.</span><span class="nx">CDIntfExClass</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span>
-
-    <span class="c1">//--------------------------------------------------------------------------</span></pre></div>
+      <div class="highlight"><pre><span class="c1">// This class provides the methods that empower the Amyuni PDF driver to do its magic.</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -45,16 +29,18 @@
       <div class='octowrap'>
         <a class='octothorpe' href='#section-1'>#</a>
       </div>
-      <p>Public constructor(s).</p>
+      <p>A longtime friend of ASNA's, Forrest Forbus (that's right, <a href="https://asna.com/us/articles/newsletter/2014/q4/asna-palooza-2014">Elvis himself!</a>)
+contributed lots of code, ideas, and inspiration for this code. Beyond contributing code,
+it was his work that originally proved the Amyuni PDF print driver works with AVR for .NET.
+Thank you for all your help, Forrest.</p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>    <span class="c1">//--------------------------------------------------------------------------</span>
-    <span class="kr">BegConstructor</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span>
-        <span class="kr">DclSrParm</span> <span class="nx">XmlFilePath</span>     <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
-        <span class="kr">DclSrParm</span> <span class="nx">OutputFilePath</span>  <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
+      <div class="highlight"><pre><span class="kr">Using</span> <span class="nx">System</span>
+<span class="kr">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Text</span>
+<span class="kr">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">IO</span>
+<span class="kr">Using</span> <span class="nx">System</span><span class="p">.</span><span class="nx">Xml</span>
 
-        <span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">DriverInfo</span> <span class="o">=</span> <span class="nx">DriverInfo</span><span class="p">.</span><span class="nx">GetInstance</span><span class="p">(</span><span class="nx">XmlFilePath</span><span class="p">,</span> <span class="nx">OutputFilePath</span><span class="p">)</span>
-    <span class="kr">EndConstructor</span></pre></div>
+<span class="nx">DclNamespace</span> <span class="nx">ASNA</span><span class="p">.</span><span class="nx">AmyUniPDF</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -62,6 +48,45 @@
     <div class='docs'>
       <div class='octowrap'>
         <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <p>The Amnyuni PDF print driver has many options, but these are two the
+two need to use it with AVR for .NET.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="nx">BegEnum</span> <span class="nx">AmyuniFileOptions</span>
+    <span class="nx">DclEnumFld</span> <span class="nx">DoNotPromptForFileName</span> <span class="nx">Value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nx">DclEnumFld</span> <span class="nx">UseFileNameSpecified</span>   <span class="nx">Value</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nx">EndEnum</span>
+
+<span class="kr">BegClass</span> <span class="nx">Manager</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span>
+    <span class="kr">DclFld</span> <span class="nx">DriverInfo</span> <span class="kr">Type</span><span class="p">(</span><span class="nx">PDFDriverInfo</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span>
+    <span class="kr">DclFld</span> <span class="nx">AmyuniPDF</span>  <span class="kr">Type</span><span class="p">(</span><span class="nx">CDIntfEx</span><span class="p">.</span><span class="nx">CDIntfExClass</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span>
+
+    <span class="kr">BegConstructor</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span>
+        <span class="kr">DclSrParm</span> <span class="nx">XmlFilePath</span>     <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
+        <span class="kr">DclSrParm</span> <span class="nx">OutputFilePath</span>  <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>The driver needs location of the XML configuration file and
+where you want PDFs placed. It's generally important for ASP.NET work
+to put PDFs in a folder under the app's virtual directory.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">DriverInfo</span> <span class="o">=</span> <span class="nx">DriverInfo</span><span class="p">.</span><span class="nx">GetInstance</span><span class="p">(</span><span class="nx">XmlFilePath</span><span class="p">,</span> <span class="nx">OutputFilePath</span><span class="p">)</span>
+    <span class="kr">EndConstructor</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
       </div>
       <p>Start the Amyuni PDF driver.</p>
     </div>
@@ -81,9 +106,19 @@
         <span class="nx">ReturnCode</span> <span class="o">=</span> <span class="nx">AmyuniPDF</span><span class="p">.</span><span class="nx">DriverInit</span><span class="p">(</span><span class="nx">DriverInfo</span><span class="p">.</span><span class="nx">PrinterName</span><span class="p">)</span>
         <span class="kr">If</span> <span class="p">(</span><span class="nx">ReturnCode</span> <span class="o">&lt;&gt;</span> <span class="mi">0</span><span class="p">)</span>
             <span class="nx">Throw</span> <span class="o">*</span><span class="nx">New</span> <span class="nx">System</span><span class="p">.</span><span class="nx">ApplicationException</span><span class="p">(</span><span class="s2">&quot;AmyuniPDF failed on DriverInit() call.&quot;</span><span class="p">)</span>
-        <span class="kr">EndIf</span>
-
-        <span class="nx">AmyuniPDF</span><span class="p">.</span><span class="nx">HorizontalMargin</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="kr">EndIf</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p>Set driver defaults.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="nx">AmyuniPDF</span><span class="p">.</span><span class="nx">HorizontalMargin</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="nx">AmyuniPDF</span><span class="p">.</span><span class="nx">VerticalMargin</span>   <span class="o">=</span> <span class="mi">0</span>
         <span class="nx">AmyuniPDF</span><span class="p">.</span><span class="nx">SetDefaultConfig</span><span class="p">()</span>
         <span class="nx">AmyuniPDF</span><span class="p">.</span><span class="nx">SetDefaultPrinter</span><span class="p">()</span>
@@ -99,10 +134,10 @@
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-3'>
+  <div class='section' id='section-6'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-3'>#</a>
+        <a class='octothorpe' href='#section-6'>#</a>
       </div>
       <p>Stop the Amyuni PDF driver.</p>
     </div>
@@ -130,10 +165,10 @@
     </div>
   </div>
   <div class='clearall'></div>
-  <div class='section' id='section-4'>
+  <div class='section' id='section-7'>
     <div class='docs'>
       <div class='octowrap'>
-        <a class='octothorpe' href='#section-4'>#</a>
+        <a class='octothorpe' href='#section-7'>#</a>
       </div>
       <p>This routine is required because it takes a few seconds for AmyuniPDF to 'release' the PDF
 once print file is closed. This method tries to open file, which it cannot do until AmyuniPDF
