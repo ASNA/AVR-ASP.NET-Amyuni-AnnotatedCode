@@ -39,7 +39,7 @@
       <p>The printer name as view in "Devices and Printers" in Windows.</p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>    <span class="nx">DclProp</span> <span class="nx">PrinterName</span>          <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span></pre></div>
+      <div class="highlight"><pre>    <span class="kr">DclFld</span> <span class="nx">_PrinterName</span>          <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -51,8 +51,8 @@
       <p>The licensed company and code from Amyuni.</p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>    <span class="nx">DclProp</span> <span class="nx">LicenseCompany</span>       <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span>
-    <span class="nx">DclProp</span> <span class="nx">LicenseCode</span>          <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span></pre></div>
+      <div class="highlight"><pre>    <span class="kr">DclFld</span> <span class="nx">_LicenseCompany</span>       <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
+    <span class="kr">DclFld</span> <span class="nx">_LicenseCode</span>          <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -64,7 +64,7 @@
       <p>The output path for the PDF file.</p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>    <span class="nx">DclProp</span> <span class="nx">OutputPath</span>           <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span></pre></div>
+      <div class="highlight"><pre>    <span class="kr">DclFld</span> <span class="nx">_OutputPath</span>           <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
@@ -76,7 +76,52 @@
       <p>The PDF file name <em>without</em> the PDF extension. </p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre>    <span class="nx">DclProp</span> <span class="nx">OutputFileName</span>       <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span></pre></div>
+      <div class="highlight"><pre>    <span class="kr">DclFld</span> <span class="nx">_OutputFileName</span>       <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span>
+
+    <span class="nx">BegProp</span> <span class="nx">PrinterName</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span>
+        <span class="nx">BegGet</span>
+            <span class="kr">LeaveSr</span> <span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">_PrinterName</span>
+        <span class="nx">EndGet</span>
+        <span class="nx">BegSet</span>
+            <span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">_PrinterName</span> <span class="o">=</span> <span class="o">*</span><span class="nx">PropVal</span>
+        <span class="nx">EndSet</span>
+    <span class="nx">EndProp</span>
+
+    <span class="nx">BegProp</span> <span class="nx">LicenseCompany</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span>
+        <span class="nx">BegGet</span>
+            <span class="kr">LeaveSr</span> <span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">_LicenseCompany</span>
+        <span class="nx">EndGet</span>
+        <span class="nx">BegSet</span>
+            <span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">_LicenseCompany</span> <span class="o">=</span> <span class="o">*</span><span class="nx">PropVal</span>
+        <span class="nx">EndSet</span>
+    <span class="nx">EndProp</span>
+
+    <span class="nx">BegProp</span> <span class="nx">LicenseCode</span>  <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span>
+        <span class="nx">BegGet</span>
+            <span class="kr">LeaveSr</span> <span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">_LicenseCode</span>
+        <span class="nx">EndGet</span>
+        <span class="nx">BegSet</span>
+            <span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">_LicenseCode</span>  <span class="o">=</span> <span class="o">*</span><span class="nx">PropVal</span>
+        <span class="nx">EndSet</span>
+    <span class="nx">EndProp</span>
+
+    <span class="nx">BegProp</span> <span class="nx">OutputPath</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span>
+        <span class="nx">BegGet</span>
+            <span class="kr">LeaveSr</span> <span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">_OutputPath</span>
+        <span class="nx">EndGet</span>
+        <span class="nx">BegSet</span>
+            <span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">_OutputPath</span> <span class="o">=</span> <span class="o">*</span><span class="nx">PropVal</span>
+        <span class="nx">EndSet</span>
+    <span class="nx">EndProp</span>
+
+    <span class="nx">BegProp</span> <span class="nx">OutputFileName</span> <span class="kr">Type</span><span class="p">(</span><span class="o">*</span><span class="kc">String</span><span class="p">)</span> <span class="nx">Access</span><span class="p">(</span><span class="o">*</span><span class="nx">Public</span><span class="p">)</span> <span class="nx">SetAccess</span><span class="p">(</span><span class="o">*</span><span class="nx">Private</span><span class="p">)</span>
+        <span class="nx">BegGet</span>
+            <span class="kr">LeaveSr</span> <span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">_OutputFileName</span>
+        <span class="nx">EndGet</span>
+        <span class="nx">BegSet</span>
+            <span class="o">*</span><span class="nx">This</span><span class="p">.</span><span class="nx">_OutputFileName</span> <span class="o">=</span> <span class="o">*</span><span class="nx">PropVal</span>
+        <span class="nx">EndSet</span>
+    <span class="nx">EndProp</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
